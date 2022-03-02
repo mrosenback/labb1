@@ -8,7 +8,7 @@ public class StringCalculator {
         if(numbers.length() == 0) {
             result = 0;
         } else {
-            result = Arrays.stream(numbers.split(",")).map(Integer::parseInt).reduce(0, Integer::sum);
+            result = Arrays.stream(numbers.split("[,\n]")).map(Integer::parseInt).reduce(0, Integer::sum);
         }
         return result;
     }

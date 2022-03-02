@@ -22,4 +22,9 @@ public class StringCalculatorTest {
     public void testAddStringBigNumber() {
         assertEquals(150, calculator.Add("10,20,30,40,50"));
     }
+
+    @Test
+    public void testSplitNewLine() {
+        assertEquals(6, calculator.Add("1\n2,3"));
+    }
 }
