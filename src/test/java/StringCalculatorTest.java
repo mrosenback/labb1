@@ -17,4 +17,9 @@ public class StringCalculatorTest {
         assertEquals(1, calculator.Add("1"));
         assertEquals(3, calculator.Add("1,2"));
     }
+
+    @Test
+    public void testAddStringBigNumber() {
+        assertEquals(150, calculator.Add("10,20,30,40,50"));
+    }
 }
