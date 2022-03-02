@@ -1,6 +1,8 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringCalculatorTest {
 
@@ -26,5 +28,16 @@ public class StringCalculatorTest {
     @Test
     public void testSplitNewLine() {
         assertEquals(6, calculator.Add("1\n2,3"));
+    }
+
+    @Test
+    public void testSplitDelimiters() {
+        assertEquals(3, calculator.Add("//;\n1;2"));
+    }
+
+    @Test
+    public void testNegative() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> calculator.Add("-5,2"));
+        assertEquals("Negatives not allowed -3", exception.getMessage());
     }
 }
