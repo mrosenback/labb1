@@ -1,4 +1,6 @@
-import org.junit.jupiter.api.Assertions;
+package test.java;
+
+import main.java.StringCalculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +24,7 @@ public class StringCalculatorTest {
 
     @Test
     public void testAddStringUnknownNumber() {
-        assertEquals(150, calculator.Add("10,20,30,40,50"));
+        assertEquals(31, calculator.Add("6,9,2,7,3,4"));
     }
 
     @Test
