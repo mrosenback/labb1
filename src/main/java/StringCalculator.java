@@ -44,15 +44,23 @@ public class StringCalculator implements Logger {
 
     public String UserInput(Scanner scanner, PrintStream output) {
         output.print("scalc ");
-        return scanner.nextLine();
+        return scanner.nextLine() + "\n";
     }
 
     public static void main(String[] args) {
         WelcomeMessage("Welcome to String Calculator!\nInput some numbers with delimiters to calculate the sum: ");
 
         StringCalculator calculator = new StringCalculator();
-        int result = calculator.Add(calculator.UserInput(new Scanner(System.in), System.out));
+        StringBuilder input = new StringBuilder();
 
-        System.out.println("The result is " + result);
+        String n = " ";
+        while (!n.equals("\n")) {
+            n = calculator.UserInput(new Scanner(System.in), System.out);
+            input.append(n);
+        }
+
+        int result = calculator.Add(input.toString());
+
+        System.out.println("\nThe result is " + result);
     }
 }
