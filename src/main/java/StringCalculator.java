@@ -2,6 +2,9 @@ package main.java;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 public class StringCalculator implements Logger {
 
@@ -39,7 +42,17 @@ public class StringCalculator implements Logger {
         System.out.println(output);
     }
 
+    public String UserInput(Scanner scanner, PrintStream output) {
+        output.print("scalc ");
+        return scanner.nextLine();
+    }
+
     public static void main(String[] args) {
-        WelcomeMessage("Welcome to String Calculator!\nInput some numbers with delimiters to calculate the sum.");
+        WelcomeMessage("Welcome to String Calculator!\nInput some numbers with delimiters to calculate the sum: ");
+
+        StringCalculator calculator = new StringCalculator();
+        int result = calculator.Add(calculator.UserInput(new Scanner(System.in), System.out));
+
+        System.out.println("The result is " + result);
     }
 }
