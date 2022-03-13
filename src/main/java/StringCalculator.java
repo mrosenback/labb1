@@ -1,9 +1,6 @@
 package main.java;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintStream;
-import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class StringCalculator implements Logger {
@@ -16,7 +13,7 @@ public class StringCalculator implements Logger {
             for (int i = 0; i < numbers.length(); i++) {
                 if(numbers.charAt(i) == '-') {
                     throw new IllegalArgumentException("Negatives not allowed -" + numbers.charAt(i+1));
-                } if(numbers.charAt(i) == ',' || numbers.charAt(i) == '\n' || numbers.charAt(i) == '/' || numbers.charAt(i) == ';') {
+                } if(numbers.charAt(i) == ',' || numbers.charAt(i) == '\n' || numbers.charAt(i) == '/' || numbers.charAt(i) == ';' || numbers.charAt(i) == '*' || numbers.charAt(i) == '%' || numbers.charAt(i) == '[' || numbers.charAt(i) == ']') {
                     if(!n.isEmpty()) {
                         result += Integer.parseInt(n.toString());
                         n = new StringBuilder();
