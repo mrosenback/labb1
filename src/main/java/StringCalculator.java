@@ -1,5 +1,8 @@
 package main.java;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 public class StringCalculator implements Logger {
 
     public int Add(String numbers) {
@@ -30,5 +33,13 @@ public class StringCalculator implements Logger {
 
     public void log(int number) {
         System.out.println("A number bigger than 1000 is detected: " + number);
+    }
+
+    public static void WelcomeMessage(String output) {
+        System.out.println(output);
+    }
+
+    public static void main(String[] args) {
+        WelcomeMessage("Welcome to String Calculator!\nInput some numbers with delimiters to calculate the sum.");
     }
 }
