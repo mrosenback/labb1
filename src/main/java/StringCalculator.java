@@ -12,7 +12,7 @@ public class StringCalculator implements Logger {
                 if(numbers.charAt(i) == '-') {
                     throw new IllegalArgumentException("Negatives not allowed -" + numbers.charAt(i+1));
                 } if(numbers.charAt(i) == ',' || numbers.charAt(i) == '\n' || numbers.charAt(i) == '/' || numbers.charAt(i) == ';' || numbers.charAt(i) == '*' || numbers.charAt(i) == '%' || numbers.charAt(i) == '[' || numbers.charAt(i) == ']') {
-                    if(!n.isEmpty()) {
+                    if(n.length() != 0) {
                         result += Integer.parseInt(n.toString());
                         n = new StringBuilder();
                     }
